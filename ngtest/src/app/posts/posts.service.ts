@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class PostService {
-  API_URL = 'https://sdmplusapi.azurewebsites.net/posts/'
+  API_URL = 'https://sdmplusapi.azurewebsites.net/posts/';
   constructor(private http: HttpClient) { }
 
   getPosts() {
