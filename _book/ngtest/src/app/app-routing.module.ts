@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
     { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },
+    { path: 'calculator', loadChildren: './calculator/calculator.module#CalculatorModule' },
     {
       path: '',
       redirectTo: '/home',
@@ -16,7 +17,7 @@ const routes: Routes = [
     },
     { path: '**', component: PageNotFoundComponent }
   ];
-  
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

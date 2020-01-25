@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
     { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },
     { path: 'calculator', loadChildren: './calculator/calculator.module#CalculatorModule' },
+    { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
     {
       path: '',
       redirectTo: '/home',
