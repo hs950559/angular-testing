@@ -1,0 +1,16 @@
+{
+  "name": "css-flexbox",
+  "version": "1.0.0",
+  "description": "This file file serves as your book's preface, a great place to describe your book's content and ideas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.gitbook.com/hemantajax/css-flexbox.git"
+  },
+  "keywords": [],
+  "author": "Hemant",
+  "license": "ISC"
+}
