@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../posts.service';
+import { PostService } from '../posts.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-post.component.scss']
 })
 export class AddPostComponent implements OnInit {
-  constructor(private router: Router, private postService: PostsService) { }
+  constructor(private router: Router, private postService: PostService) { }
 
   ngOnInit() {
   }

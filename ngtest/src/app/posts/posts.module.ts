@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
-import { PostsService } from './posts.service';
+import { PostService } from './posts.service';
 import { AddPostComponent } from './add-post/add-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 
@@ -17,6 +17,7 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ PostsService ]
+  exports: [PostsComponent, AddPostComponent, EditPostComponent],
+  providers: [ PostService ]
 })
 export class PostsModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../posts.service';
+import { PostService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditPostComponent implements OnInit {
   post: any = {};
   constructor(private router: Router,
-              private postService: PostsService,
+              private postService: PostService,
               private route: ActivatedRoute
     ) {}
 

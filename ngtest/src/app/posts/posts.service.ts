@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class PostsService {
+export class PostService {
   API_URL = 'https://sdmplusapi.azurewebsites.net/posts/'
   constructor(private http: HttpClient) { }
 
