@@ -68,7 +68,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="demos/demos.html" />
+    <link rel="next" href="unit-testing.html" />
     
     
 
@@ -111,7 +111,111 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="demos/demos.html">
+        <li class="chapter " data-level="1.2" data-path="unit-testing.html">
+            
+                <a href="unit-testing.html">
+            
+                    
+                    Unit testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="get-started.html">
+            
+                <a href="get-started.html">
+            
+                    
+                    Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="http-testing.html">
+            
+                <a href="http-testing.html">
+            
+                    
+                    Http testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="component.html">
+            
+                <a href="component.html">
+            
+                    
+                    Component Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="smart-component.html">
+            
+                <a href="smart-component.html">
+            
+                    
+                    Smart Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="async-test.html">
+            
+                <a href="async-test.html">
+            
+                    
+                    Async Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pipe-testing.html">
+            
+                <a href="pipe-testing.html">
+            
+                    
+                    Pipe Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="dependencies.html">
+            
+                <a href="dependencies.html">
+            
+                    
+                    Service with dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="demos/demos.html">
             
                 <a href="demos/demos.html">
             
@@ -121,38 +225,6 @@
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="demos/demo1.html">
-            
-                <a href="demos/demo1.html">
-            
-                    
-                    Demo 1
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="demos/demo2.html">
-            
-                <a href="demos/demo2.html">
-            
-                    
-                    Demo 2
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -202,27 +274,133 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="angular-testing">Angular Testing</h1>
-<p><img src="images/ng-testing.png" alt="Angular Testing"></p>
-<pre><code>ng test
-</code></pre><pre><code class="lang-javascript">describe(<span class="hljs-string">&apos;test 1&apos;</span>, ()=&gt; {
+<p>Testing helps you to catch bugs before you release your software</p>
+<h2 id="sample-test">Sample Test</h2>
+<ul>
+<li>setup / act / assert</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { CalculatorService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./calculator.service&apos;</span>;
+<span class="hljs-keyword">import</span> { LoggerService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./logger.service&apos;</span>;
 
-    it(<span class="hljs-string">&apos;test 1&apos;</span>, ()=&gt; {
-        pending();
-    });
+describe(<span class="hljs-string">&apos;CalculatorService&apos;</span>, () =&gt; {
+  it(<span class="hljs-string">&apos;should add 2 numbers&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Step 1 - setup</span>
+    <span class="hljs-keyword">const</span> calculator = <span class="hljs-keyword">new</span> CalculatorService(<span class="hljs-keyword">new</span> LoggerService());
 
-    it(<span class="hljs-string">&apos;test 2&apos;</span>, ()=&gt; {
-        fail();
-    });
+    <span class="hljs-comment">// Step 2 - Act</span>
+    <span class="hljs-keyword">const</span> result = calculator.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+
+    <span class="hljs-comment">// Step 3 - Assert</span>
+    expect(result).toEqual(<span class="hljs-number">6</span>);
+  });
+
+  it(<span class="hljs-string">&apos;should subtract 2 numbers&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Step 1 - setup</span>
+    <span class="hljs-keyword">const</span> calculator = <span class="hljs-keyword">new</span> CalculatorService(<span class="hljs-keyword">new</span> LoggerService());
+
+    <span class="hljs-comment">// Step 2 - Act</span>
+    <span class="hljs-keyword">const</span> result = calculator.subtract(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>);
+
+    <span class="hljs-comment">// Step 3 - Assert</span>
+    expect(result).toEqual(<span class="hljs-number">5</span>);
+  });
 });
 </code></pre>
-<h2 id="excluding-test-suitcase">Excluding test suit/case</h2>
-<pre><code class="lang-javascript">xdescribe
-xit
+<h2 id="basic-idea">Basic Idea</h2>
+<p>Add All dependencies as fake dependency as you want to test only service that&apos;s unit test, so service should fail because of it&apos;s own test only.</p>
+<ul>
+<li>Logger should be faked</li>
+<li>Calculator service only you want to test</li>
+</ul>
+<h2 id="spying-dependent-method-calls">Spying dependent method calls</h2>
+<p>Still we are using actual  service dependency </p>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;should add 2 numbers&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Step 1 - setup</span>
+    <span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> LoggerService();
+    <span class="hljs-keyword">const</span> calculator = <span class="hljs-keyword">new</span> CalculatorService(logger);
+
+    spyOn(logger, <span class="hljs-string">&apos;log&apos;</span>);
+
+    <span class="hljs-comment">// Step 2 - Act</span>
+    <span class="hljs-keyword">const</span> result = calculator.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+
+    <span class="hljs-comment">// Step 3 - Assert</span>
+    expect(result).toEqual(<span class="hljs-number">6</span>);
+    expect(logger.log).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+});
 </code></pre>
-<h2 id="focus-on-specific-test-suitcase">Focus on specific test suit/case</h2>
-<pre><code class="lang-javascript">fdescribe
-fit
+<h2 id="completely-faking-dependent-services">Completely faking dependent services</h2>
+<p>You can see no <code>LoggerService</code> in import.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { CalculatorService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./calculator.service&apos;</span>;
+
+describe(<span class="hljs-string">&apos;CalculatorService&apos;</span>, () =&gt; {
+  it(<span class="hljs-string">&apos;should add 2 numbers&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Step 1 - setup</span>
+    <span class="hljs-keyword">const</span> logger = jasmine.createSpyObj(<span class="hljs-string">&apos;LoggerService&apos;</span>, [<span class="hljs-string">&apos;log&apos;</span>]);
+    <span class="hljs-keyword">const</span> calculator = <span class="hljs-keyword">new</span> CalculatorService(logger);
+
+    <span class="hljs-comment">// Step 2 - Act</span>
+    <span class="hljs-keyword">const</span> result = calculator.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+
+    <span class="hljs-comment">// Step 3 - Assert</span>
+    expect(result).toEqual(<span class="hljs-number">6</span>);
+    expect(logger.log).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+  });
+
+  it(<span class="hljs-string">&apos;should subtract 2 numbers&apos;</span>, () =&gt; {
+    pending();
+  });
+});
 </code></pre>
+<h2 id="use-beforeeach-to-reuse-setup-logic">Use beforeEach to reuse setup logic</h2>
+<pre><code class="lang-javascript">describe(<span class="hljs-string">&apos;CalculatorService&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> logger: any;
+  <span class="hljs-keyword">let</span> calculator: any;
+
+  beforeEach(() =&gt; {
+    logger = jasmine.createSpyObj(<span class="hljs-string">&apos;LoggerService&apos;</span>, [<span class="hljs-string">&apos;log&apos;</span>]);
+    calculator = <span class="hljs-keyword">new</span> CalculatorService(logger);
+  });
+
+  it(<span class="hljs-string">&apos;should add 2 numbers&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Step 2 - Act</span>
+    <span class="hljs-keyword">const</span> result = calculator.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+
+    <span class="hljs-comment">// Step 3 - Assert</span>
+    expect(result).toEqual(<span class="hljs-number">6</span>);
+    expect(logger.log).toHaveBeenCalledTimes(<span class="hljs-number">1</span>);
+  });
+ });
+<span class="hljs-string">`
+</span></code></pre>
+<h2 id="testing-angular-setup">Testing angular setup</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { TestBed } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@angular/core/testing&apos;</span>;
+<span class="hljs-keyword">import</span> { CalculatorService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./calculator.service&apos;</span>;
+<span class="hljs-keyword">import</span> { LoggerService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./logger.service&apos;</span>;
+
+describe(<span class="hljs-string">&apos;CalculatorService&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> logger: any;
+  <span class="hljs-keyword">let</span> calculator: any;
+
+  beforeEach(() =&gt; {
+    logger = jasmine.createSpyObj(<span class="hljs-string">&apos;LoggerService&apos;</span>, [<span class="hljs-string">&apos;log&apos;</span>]);
+
+    TestBed.configureTestingModule({
+      providers: [
+        CalculatorService,
+        {
+          provide: LoggerService,
+          useValue: logger
+        }
+      ]
+    });
+
+    calculator = TestBed.get(CalculatorService);
+  });
+
+});
+<span class="hljs-string">`
+</span></code></pre>
 
                                 
                                 </section>
@@ -251,7 +429,7 @@ fit
             
                 
                 
-                <a href="demos/demos.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Demos">
+                <a href="unit-testing.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Unit testing">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -262,7 +440,7 @@ fit
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Demos","level":"1.2","depth":1,"path":"demos/demos.md","ref":"demos/demos.md","articles":[{"title":"Demo 1","level":"1.2.1","depth":2,"path":"demos/demo1.md","ref":"demos/demo1.md","articles":[]},{"title":"Demo 2","level":"1.2.2","depth":2,"path":"demos/demo2.md","ref":"demos/demo2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["addcssjs","expandable-chapters","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"addcssjs":{"css":["css/bootstrap.css","css/main.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CSS Flexbox","language":"en","gitbook":"3.2.2","description":"CSS Flexbox in depth"},"file":{"path":"README.md","mtime":"2020-01-25T03:36:47.358Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-01-25T02:28:36.053Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Unit testing","level":"1.2","depth":1,"path":"unit-testing.md","ref":"unit-testing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["addcssjs","expandable-chapters","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"addcssjs":{"css":["css/bootstrap.css","css/main.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CSS Flexbox","language":"en","gitbook":"3.2.2","description":"CSS Flexbox in depth"},"file":{"path":"README.md","mtime":"2020-05-15T10:36:51.101Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-05-17T12:23:19.014Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

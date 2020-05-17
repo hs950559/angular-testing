@@ -1,0 +1,500 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Http testing · CSS Flexbox</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="component.html" />
+    
+    
+    <link rel="prev" href="get-started.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="unit-testing.html">
+            
+                <a href="unit-testing.html">
+            
+                    
+                    Unit testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="get-started.html">
+            
+                <a href="get-started.html">
+            
+                    
+                    Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="http-testing.html">
+            
+                <a href="http-testing.html">
+            
+                    
+                    Http testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="component.html">
+            
+                <a href="component.html">
+            
+                    
+                    Component Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="smart-component.html">
+            
+                <a href="smart-component.html">
+            
+                    
+                    Smart Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="async-test.html">
+            
+                <a href="async-test.html">
+            
+                    
+                    Async Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pipe-testing.html">
+            
+                <a href="pipe-testing.html">
+            
+                    
+                    Pipe Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="dependencies.html">
+            
+                <a href="dependencies.html">
+            
+                    
+                    Service with dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="demos/demos.html">
+            
+                <a href="demos/demos.html">
+            
+                    
+                    Demos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Http testing</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="http-testing">Http Testing</h1>
+<h2 id="basic-setup">Basic Setup</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { HttpTestingController, HttpClientTestingModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@angular/common/http/testing&apos;</span>;
+<span class="hljs-keyword">import</span> { TestBed } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@angular/core/testing&apos;</span>;
+<span class="hljs-keyword">import</span> { CoursesService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./courses.service&apos;</span>;
+<span class="hljs-keyword">import</span> { COURSES } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../../../server/db-data&apos;</span>;
+
+describe(<span class="hljs-string">&apos;CoursesService&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> coursesService: CoursesService;
+  <span class="hljs-keyword">let</span> testingController: HttpTestingController;
+
+  beforeEach(() =&gt; {
+
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [
+        CoursesService
+      ]
+    });
+
+    coursesService = TestBed.get(CoursesService);
+    testingController = TestBed.get(HttpTestingController);
+  });
+
+});
+</code></pre>
+<h2 id="fetch-all">Fetch All</h2>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;should retreive all courses&apos;</span>, () =&gt; {
+    coursesService.findAllCourses()
+      .subscribe(courses =&gt; {
+        expect(courses.length).toBe(<span class="hljs-number">12</span>);
+
+        <span class="hljs-keyword">const</span> course = courses[<span class="hljs-number">1</span>];
+        expect(course.category).toEqual(<span class="hljs-string">&apos;BEGINNER&apos;</span>);
+        expect(course.titles.description).toEqual(<span class="hljs-string">&apos;Angular Core Deep Dive&apos;</span>);
+
+
+      });
+
+    <span class="hljs-keyword">const</span> req = testingController.expectOne(<span class="hljs-string">&apos;/api/courses&apos;</span>);
+    expect(req.request.method).toEqual(<span class="hljs-string">&apos;GET&apos;</span>);
+    req.flush({ payload: <span class="hljs-built_in">Object</span>.values(COURSES) });
+});
+</code></pre>
+<h2 id="get-single">Get Single</h2>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;Should get one course by id&apos;</span>, () =&gt; {
+    coursesService.findCourseById(<span class="hljs-number">12</span>)
+      .subscribe(course =&gt; {
+        expect(course).toBeDefined();
+        expect(course.titles.description).toEqual(<span class="hljs-string">&apos;Angular Testing Course&apos;</span>);
+      });
+
+    <span class="hljs-keyword">const</span> req = testingController.expectOne(<span class="hljs-string">&apos;/api/courses/12&apos;</span>);
+    expect(req.request.method).toEqual(<span class="hljs-string">&apos;GET&apos;</span>);
+    req.flush(COURSES[<span class="hljs-number">12</span>]);
+});
+<span class="hljs-string">`
+</span></code></pre>
+<h2 id="aftereach">afterEach</h2>
+<pre><code class="lang-javascript">afterEach(() =&gt; {
+    <span class="hljs-comment">// to make sure only one http call in each it block</span>
+    testingController.verify();
+});
+</code></pre>
+<h2 id="save-single-course">Save single course</h2>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;Should update one course&apos;</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> changes: Partial&lt;Course&gt; = {
+      titles: {
+        description: <span class="hljs-string">&apos;MY Updated Title&apos;</span>
+      }
+    };
+
+    coursesService.saveCourse(<span class="hljs-number">12</span>, changes)
+      .subscribe(course =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;HEMANT&apos;</span>, changes);
+        expect(course.id).toEqual(<span class="hljs-number">12</span>);
+        expect(course.titles.description).toEqual(<span class="hljs-string">&apos;MY Updated Title&apos;</span>);
+      });
+
+    <span class="hljs-keyword">const</span> req = testingController.expectOne(<span class="hljs-string">&apos;/api/courses/12&apos;</span>);
+    expect(req.request.method).toEqual(<span class="hljs-string">&apos;PUT&apos;</span>);
+    req.flush({
+      ...COURSES[<span class="hljs-number">12</span>],
+      ...changes
+    });
+});
+</code></pre>
+<h2 id="error-handling">Error Handling</h2>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;should give error if couse save failed&apos;</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> changes: Partial&lt;Course&gt; = {
+      titles: {
+        description: <span class="hljs-string">&apos;MY Updated Title&apos;</span>
+      }
+    };
+
+    coursesService.saveCourse(<span class="hljs-number">12</span>, changes)
+      .subscribe(course =&gt;
+        () =&gt; fail(<span class="hljs-string">&apos;Update should have failed&apos;</span>),
+        (error: HttpErrorResponse) =&gt; {
+          expect(error.status).toEqual(<span class="hljs-number">500</span>);
+        }
+      );
+
+    <span class="hljs-keyword">const</span> req = testingController.expectOne(<span class="hljs-string">&apos;/api/courses/12&apos;</span>);
+    expect(req.request.method).toEqual(<span class="hljs-string">&apos;PUT&apos;</span>);
+    req.flush(<span class="hljs-literal">null</span>, {
+      status: <span class="hljs-number">500</span>,
+      statusText: <span class="hljs-string">&apos;Internal Server Error&apos;</span>
+    });
+});
+</code></pre>
+<h2 id="test-request-parameters">Test request parameters</h2>
+<pre><code class="lang-javascript">it(<span class="hljs-string">&apos;should find all lessons for a course&apos;</span>, () =&gt; {
+    coursesService.findLessons(<span class="hljs-number">12</span>)
+      .subscribe(lessons =&gt; {
+        expect(lessons).toBeTruthy();
+        expect(lessons.length).toBe(<span class="hljs-number">3</span>);
+      });
+
+    <span class="hljs-keyword">const</span> req = testingController.expectOne(r =&gt; r.url === <span class="hljs-string">&apos;/api/lessons&apos;</span>);
+    expect(req.request.method).toEqual(<span class="hljs-string">&apos;GET&apos;</span>);
+    expect(req.request.params.get(<span class="hljs-string">&apos;courseId&apos;</span>)).toEqual(<span class="hljs-string">&apos;12&apos;</span>);
+    expect(req.request.params.get(<span class="hljs-string">&apos;filter&apos;</span>)).toEqual(<span class="hljs-string">&apos;&apos;</span>);
+    expect(req.request.params.get(<span class="hljs-string">&apos;sortOrder&apos;</span>)).toEqual(<span class="hljs-string">&apos;asc&apos;</span>);
+    expect(req.request.params.get(<span class="hljs-string">&apos;pageNumber&apos;</span>)).toEqual(<span class="hljs-string">&apos;0&apos;</span>);
+    expect(req.request.params.get(<span class="hljs-string">&apos;pageSize&apos;</span>)).toEqual(<span class="hljs-string">&apos;3&apos;</span>);
+
+    req.flush({
+      payload: findLessonsForCourse(<span class="hljs-number">12</span>).slice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)
+    });
+});
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="get-started.html" class="navigation navigation-prev " aria-label="Previous page: Get Started">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="component.html" class="navigation navigation-next " aria-label="Next page: Component Testing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Http testing","level":"1.4","depth":1,"next":{"title":"Component Testing","level":"1.5","depth":1,"path":"component.md","ref":"component.md","articles":[]},"previous":{"title":"Get Started","level":"1.3","depth":1,"path":"get-started.md","ref":"get-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["addcssjs","expandable-chapters","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"addcssjs":{"css":["css/bootstrap.css","css/main.css"],"js":[]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CSS Flexbox","language":"en","gitbook":"3.2.2","description":"CSS Flexbox in depth"},"file":{"path":"http-testing.md","mtime":"2020-05-17T14:31:27.433Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-05-17T12:23:19.014Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+
+    </body>
+</html>
+

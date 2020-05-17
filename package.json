@@ -1,16 +1,25 @@
 {
-  "name": "css-flexbox",
+  "name": "Ngrx - State Management with Angular",
   "version": "1.0.0",
-  "description": "This file file serves as your book's preface, a great place to describe your book's content and ideas.",
+  "description": "![Angular Testing](images/ng-testing.png)",
   "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-addcssjs": "^1.0.2",
+    "gitbook-plugin-expandable-chapters": "^0.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.gitbook.com/hemantajax/css-flexbox.git"
+    "url": "git+https://github.com/hs950559/ngrx.git"
   },
   "keywords": [],
-  "author": "Hemant",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hs950559/ngrx/issues"
+  },
+  "homepage": "https://github.com/hs950559/ngrx#readme"
 }
